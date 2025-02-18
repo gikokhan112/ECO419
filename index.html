@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Platform</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/games.css">
+    <script type="module" src="script/firebase.js"></script>
+    <script defer src="script/featuredApps.js"></script> <!-- Add a script for featured apps -->
+</head>
+<style>
+    .hero-image {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .slider-frame {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+      min-width: 100%;
+      box-sizing: border-box;
+    }
+
+    .slide img {
+      width: 100%;
+      display: block;
+    }
+</style>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">ECO<span>419</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="apps.html">Apps</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="search-bar">
+        <input id="searchInput" type="text" placeholder="Search for apps, games, or articles...">
+        <button onclick="handleSearch()">Search</button>
+    </div>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>We've Created <span>PaymentClub</span> for You!</h1>
+            <p>Advanced processing with the latest features.</p>
+            <button class="btn-primary">Get Started</button>
+        </div>
+        <div class="hero-image">
+            <div class="slider-frame">
+                <div class="slide"><img src="assets/1.jpg" alt="Slide 1"></div>
+                <div class="slide"><img src="assets/2.jpg" alt="Slide 2"></div>
+                <div class="slide"><img src="assets/3.jpg" alt="Slide 3"></div>
+                <div class="slide"><img src="assets/4.jpg" alt="Slide 4"></div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <section class="apps-section">
+        <div id="apps-container">
+            <!-- Apps will be dynamically inserted here -->
+        </div>
+    </section>
+    <section>
+        <section class="features">
+            <h2>Join <span>The Club</span></h2>
+            <div class="feature-cards">
+                <div class="card">
+                    <a href=""><img src="assets/1.jpg" alt="Feature 1"></a>
+                    <h3>Retail Terminals</h3>
+                    <p>Easy-to-use solutions.</p>
+                </div>
+                <div class="card">
+                    <img src="assets/2.jpg" alt="Feature 2">
+                    <h3>Mobile Payments</h3>
+                    <p>Work on the go.</p>
+                </div>
+                <div class="card">
+                    <img src="assets/3.jpg" alt="Feature 3">
+                    <h3>Online Payments</h3>
+                    <p>Seamless integration.</p>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ECO419. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function handleSearch() {
+            const query = document.getElementById('searchInput').value;
+            if (query) {
+                window.location.href = `apps.html?search=${encodeURIComponent(query)}`;
+            }
+        }
+    </script>
+    <script>
+        const sliderFrame = document.querySelector('.slider-frame');
+        const slides = document.querySelectorAll('.slide');
+        let currentIndex = 0;
+
+        function slideImages() {
+            currentIndex++;
+            if (currentIndex >= slides.length) {
+                currentIndex = 0;
+            }
+            sliderFrame.style.transform = `translateX(${-currentIndex * 100}%)`;
+        }
+
+        // Set the sliding interval
+        setInterval(slideImages, 3000); // Slide every 3 seconds
+    </script>
+</body>
+
+</html>
