@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const apps = [
         {
             id: 1,
-            title: "Best Cheat Loader_ 200m brutal edition",
-            icon: "1.jpg",
+            title: "Riddle Quest 2",
+            icon: "assets/1.png",
             downloadLink: "app1-details.html"
         },
         {
