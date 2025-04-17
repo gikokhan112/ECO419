@@ -10,129 +10,119 @@
     <script type="module" src="script/firebase.js"></script>
     <script defer src="script/featuredApps.js"></script> <!-- Add a script for featured apps -->
 </head>
-<style>
-    .hero-image {
-      width: 100%;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .slider-frame {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
-
-    .slide {
-      min-width: 100%;
-      box-sizing: border-box;
-    }
-
-    .slide img {
-      width: 100%;
-      display: block;
-    }
-</style>
-
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">ECO<span>419</span></div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="apps.html">Apps</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-        </nav>
-    </header>
-    <div class="search-bar">
-        <input id="searchInput" type="text" placeholder="Search for apps, games, or articles...">
-        <button onclick="handleSearch()">Search</button>
-    </div>
-    <section class="hero">
-        <div class="hero-content">
-            <h1>We've Created <span>PaymentClub</span> for You!</h1>
-            <p>Advanced processing with the latest features.</p>
-            <button class="btn-primary">Get Started</button>
+
+    <nav>
+        <div class="nav-logo">
+            <h1>EcosClub</h1>
         </div>
-        <div class="hero-image">
-            <div class="slider-frame">
-                <div class="slide"><img src="assets/1.jpg" alt="Slide 1"></div>
-                <div class="slide"><img src="assets/2.jpg" alt="Slide 2"></div>
-                <div class="slide"><img src="assets/3.jpg" alt="Slide 3"></div>
-                <div class="slide"><img src="assets/4.jpg" alt="Slide 4"></div>
+
+        <ul class="nav-links">
+            <li class="link"><a href="#">Home</a></li>
+            <li id="link1" class="link"><a href="apps.html">apps</a></li>
+            <li id="link2" class="link"><a href="contact.html">contact</a></li>
+            <li id="link3" class="link"><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <header class="container">
+        <div class="content">
+            <span class="blur"></span>
+            <span class="blur"></span>
+            <H1><span>Hello, this is  EcosClub</span></H1>
+            <p>
+                Welcom to EcosClub. Here you can find different ai tool that are 100% free lifetime , you can also find free apps maybe we upload free premium unlocked apps but not sure , this platform is still under development and need alot to improve. Enjoy your journey here.
+            </p>
+                
+
+        </div>
+        <div class="image">
+            <img src="assets/header.png">
+        </div>
+    </header>
+
+    <section class="container">
+        <h2 class="header">Free Ai Tools</h2>
+        <div class="features">
+            <div class="card">
+                <span><i class="ri-money-dollar-box-line"></i></span>
+                <h4>Text To Speach</h4>
+                <p>
+                    100% Free lifetime text to speach Ai tool .
+                </p>
+                <a href="#">Click Here <i class="ri-arrow-right-line"></i></a>
+            </div>
+            <div class="card" >
+                <span><i class="ri-bug-line"></i></span>
+                <h4>Chat gpt</h4>
+                <p>
+                    You have any problem in your codes? Tell me, i will help you fix it.
+                </p>
+                <a href="#">Open Now <i class="ri-arrow-right-line"></i></a>
+            </div>
+            <div class="card">
+                <span><i class="ri-history-line"></i></span>
+                <h4>Text Encrypter</h4>
+                <p>
+                   Convert you message into secret code (click encrypt) and reconvert youir code into text (click decrypt)
+                </p>
+                <a href="#">Open Now <i class="ri-arrow-right-line"></i></a>
+            </div>
+            <div class="card">
+                <span><i class="ri-shake-hands-line"></i></span>
+                <h4>Cooperation</h4>
+                <p>
+                    You want we worrk together? Write email to us, we will read it.
+                </p>
+                <a href="#">Open Now <i class="ri-arrow-right-line"></i></a>
+            </div>
+            <div class="card">
+                <span><i class="ri-money-dollar-box-line"></i></span>
+                <h4>Text To Speach</h4>
+                <p>
+                    100% Free text to speach Ai lifetime.
+                </p>
+                <a href="#">Open Now <i class="ri-arrow-right-line"></i></a>
+            </div>
+            <div class="card" >
+                <span><i class="ri-bug-line"></i></span>
+                <h4>Fix Your Bugs</h4>
+                <p>
+                    You have any problem in your codes? Tell me, i will help you fix it.
+                </p>
+                <a href="#">Open Now <i class="ri-arrow-right-line"></i></a>
+            </div>
+            <div class="card">
+                <span><i class="ri-history-line"></i></span>
+                <h4>On Time Videos</h4>
+                <p>
+                    We have video each 4 days, So check channel every 4 days to watch it!
+                </p>
+                <a href="#">Open Now <i class="ri-arrow-right-line"></i></a>
+            </div>
+            <div class="card">
+                <span><i class="ri-shake-hands-line"></i></span>
+                <h4>Cooperation</h4>
+                <p>
+                    You want we worrk together? Write email to us, we will read it.
+                </p>
+                <a href="#">Open Now <i class="ri-arrow-right-line"></i></a>
             </div>
         </div>
     </section>
-
-    
-
     <section class="apps-section">
+        <h4>Recent Apps</h4>
         <div id="apps-container">
             <!-- Apps will be dynamically inserted here -->
         </div>
     </section>
-    <section>
-        <section class="features">
-            <h2>Join <span>The Club</span></h2>
-            <div class="feature-cards">
-                <div class="card">
-                    <a href=""><img src="assets/1.jpg" alt="Feature 1"></a>
-                    <h3>Retail Terminals</h3>
-                    <p>Easy-to-use solutions.</p>
-                </div>
-                <div class="card">
-                    <img src="assets/2.jpg" alt="Feature 2">
-                    <h3>Mobile Payments</h3>
-                    <p>Work on the go.</p>
-                </div>
-                <div class="card">
-                    <img src="assets/3.jpg" alt="Feature 3">
-                    <h3>Online Payments</h3>
-                    <p>Seamless integration.</p>
-                </div>
-            </div>
-        </section>
-    </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 ECO419. All rights reserved.</p>
-        </div>
-    </footer>
+    <div class="copyright">
+        Copyright © 2023 AsmrProg Channel. All Rights Reserved.
+    </div>
 
-    <script>
-        function handleSearch() {
-            const query = document.getElementById('searchInput').value;
-            if (query) {
-                window.location.href = `apps.html?search=${encodeURIComponent(query)}`;
-            }
-        }
-    </script>
-    <script>
-        const sliderFrame = document.querySelector('.slider-frame');
-        const slides = document.querySelectorAll('.slide');
-        let currentIndex = 0;
 
-        function slideImages() {
-            currentIndex++;
-            if (currentIndex >= slides.length) {
-                currentIndex = 0;
-            }
-            sliderFrame.style.transform = `translateX(${-currentIndex * 100}%)`;
-        }
-
-        // Set the sliding interval
-        setInterval(slideImages, 3000); // Slide every 3 seconds
-    </script>
-    <script type="text/javascript">
-    aclib.runAutoTag({
-        zoneId: 'lrgb7hd2j7',
-    });
-</script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6213340758394686"
-     crossorigin="anonymous"></script>
-
+    <script src="script/script.js"></script>
 </body>
 
 </html>
